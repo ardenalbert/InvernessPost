@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href='https://fonts.googleapis.com/css?family=Spirax' rel='stylesheet'>
+
+
+<style>
+
+body {
+  background-image: url("clocktower_background.jpg");
+  background-repeat: no-repeat;
+}
+
+/* title */
+h1 {
+	position: absolute;
+	left: 190px;
+	top: 70px;
+	text-align: left;
+	color: black;
+	font-size: 70px;
+	font-family: 'Spirax';
+}
+
+h2 {
+	position: absolute;
+	left: 285px;
+	top: 235px;
+	text-align: left;
+	color: black;
+	font-size: 32px;
+	font-family: 'Spirax';
+}
+
+h3 {
+	position: absolute;
+	left: 320px;
+	top: 300px;
+	text-align: left;
+	color: red;
+	font-size: 48px;
+	font-family: 'Spirax';
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>The Inverness Post</h1>
+<svg height="300" width="700">
+  <line x1="250" y1="225" x2="775" y2="225" style="stroke:rgb(169,169,169);stroke-width:2" />
+</svg>
+<h2>obscure neighbourhood info</h2>
+<h3>*Coming Soon*</h3>
+<script>
+window.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if event already handled
+  }
+ 
+  switch(event.code) {
+    case "KeyA":
+      // Handle "next page"
+	  window.open("image1.html","_self");
+      break;
+  }
+
+  // Consume the event so it doesn't get handled twice
+  event.preventDefault();
+}, true);
+</script>
+
+</body>
+</html>

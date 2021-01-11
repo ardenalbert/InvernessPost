@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quote</title>
+</head>
+
+<p id="quote"></p>
+
+<script>	
+fetch('https://cors-anywhere.herokuapp.com/https://www.adafruit.com/api/quotes.php')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      document.getElementById("quote").innerHTML = data[0].text + ", " + data[0].author;
+	  
+	  });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
+</script>
+
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body {
+  background-image: url("images_background.jpg");
+  background-repeat: no-repeat;
+}
+
+img {
+  display: block;
+  margin-left: 220px;
+  margin-top: 35px;
+  margin-right: 35px;
+}
+
+/* title */
+h1 {
+	position: absolute;
+	left: 10px;
+	top: 100px;
+	text-align: left;
+	color: white;
+	font-size: 26px;
+	font-family: 'Libre Franklin';
+}
+
+h2 {
+	position: absolute;
+	left: 10px;
+	top: 210px;
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	font-family: 'Libre Franklin';
+}
+
+h3 {
+	position: absolute;
+	left: 10px;
+	top: 270px;
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	font-family: 'Libre Franklin';
+}
+</style>
+
+</head>
+
+<body>
+<img src="image1.jpg" alt="Inverness Photo" style="width:70%;">
+<h1>Inverness<br>Community</h1>
+<h2>Date: 2000</h2>
+<h3>Photo courtesy<br>Mckenzie Towne<br>Council</h3>
+<script>
+window.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if event already handled
+  }
+ 
+  switch(event.code) {
+    case "KeyA":
+      // Handle "next page"
+	  window.open("image1.html","_self");
+      break;
+  }
+
+  // Consume the event so it doesn't get handled twice
+  event.preventDefault();
+}, true);
+</script>
+
+</body>
+</html>
