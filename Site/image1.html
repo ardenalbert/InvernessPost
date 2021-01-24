@@ -2,9 +2,12 @@
 <html>
 
 <head>
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Image 1</title>
 
 <style>
 
@@ -20,7 +23,6 @@ img {
   margin-right: 35px;
 }
 
-/* title */
 h1 {
 	position: absolute;
 	left: 10px;
@@ -52,30 +54,41 @@ h3 {
 }
 </style>
 
+<script>
+
+window.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+	return; // Do nothing if event already handled
+  }
+	 
+  switch(event.code) {
+	case "KeyA":
+	  // Handle "next page"
+	  window.open("image2.html","_self");
+	  break;
+  }
+	
+  // Consume the event so it doesn't get handled twice
+  event.preventDefault();
+}, true);
+
+//Return to home screen after 5 minutes
+setTimeout(home, 300000);
+function home() {
+  window.open("index.html", "_self");
+}
+
+</script>
 </head>
 
+
 <body>
+
 <img src="image1.jpg" alt="Inverness Photo" style="width:70%;">
 <h1>Inverness<br>Community</h1>
 <h2>Date: 2000</h2>
 <h3>Photo courtesy<br>Mckenzie Towne<br>Council</h3>
-<script>
-window.addEventListener("keydown", function(event) {
-  if (event.defaultPrevented) {
-    return; // Do nothing if event already handled
-  }
- 
-  switch(event.code) {
-    case "KeyA":
-      // Handle "next page"
-	  window.open("image2.html","_self");
-      break;
-  }
-
-  // Consume the event so it doesn't get handled twice
-  event.preventDefault();
-}, true);
-</script>
 
 </body>
+
 </html>

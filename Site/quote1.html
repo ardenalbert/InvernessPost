@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Spirax' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  
-  <title>Quote</title>
-  
-  <style>
 
-    body {
-      background-image: url("clocktower_background.jpg");
-      background-repeat: no-repeat;
-    }
+<link href='https://fonts.googleapis.com/css?family=Spirax' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  
+<title>Quote</title>
+  
+<style>
+
+body {
+  background-image: url("clocktower_background.jpg");
+  background-repeat: no-repeat;
+}
      
-    h1 {
-      position: absolute;
-      left: 240px;
-      /* top: 10px; */
-      text-align: left;
-      color: black;
-      font-size: 48px;
-      font-family: 'Spirax';
-    }
+h1 {
+  position: absolute;
+  left: 240px;
+  text-align: left;
+  color: black;
+  font-size: 48px;
+  font-family: 'Spirax';
+}
     
-    p {
-      position: absolute;
-      left: 240px;
-      top: 175px;
-      margin-right: 2em;
-	    text-align: left;
-      color: black;
-	    font-size: 32px;
-	    font-family: 'Roboto';
-    }
+p {
+  position: absolute;
+  left: 240px;
+  top: 175px;
+  margin-right: 2em;
+  text-align: left;
+  color: black;
+  font-size: 32px;
+  font-family: 'Roboto';
+}
 
-    </style>
-</head>
-
-<h1>Random Quote</h1>
-<svg height="300" width="700">
-  <line x1="240" y1="145" x2="775" y2="145" style="stroke:rgb(169,169,169);stroke-width:2" />
-</svg>
-<p id="quote"></p>
+</style>
 
 <script>	
+
 fetch('https://cors-anywhere.herokuapp.com/https://www.adafruit.com/api/quotes.php')
   .then(
     function(response) {
@@ -52,39 +47,51 @@ fetch('https://cors-anywhere.herokuapp.com/https://www.adafruit.com/api/quotes.p
           response.status);
         return;
       }
-
+  
       // Examine the text in the response
       response.json().then(function(data) {
         console.log(data);
-      document.getElementById("quote").innerHTML = data[0].text + ".  - " + data[0].author;
-
-	  });
+        document.getElementById("quote").innerHTML = data[0].text + ".  - " + data[0].author;
+      });
     }
   )
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-
-  window.addEventListener("keydown", function(event) {
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);
+    });
+  
+window.addEventListener("keydown", function(event) {
   if (event.defaultPrevented) {
     return; // Do nothing if event already handled
   }
- 
+   
   switch(event.code) {
     case "KeyA":
-      // Handle "next page"
-	  window.open("contact.html","_self");
-      break;
+    // Handle "next page"
+    window.open("contact.html","_self");
+    break;
   }
-
+  
   // Consume the event so it doesn't get handled twice
   event.preventDefault();
 }, true);
+
+//Return to home screen after 5 minutes
+setTimeout(home, 300000);
+function home() {
+  window.open("index.html", "_self");
+}
+
 </script>
+</head>
 
 <body>
 
-
+<h1>Random Quote</h1>
+<svg height="300" width="700">
+  <line x1="240" y1="145" x2="775" y2="145" style="stroke:rgb(169,169,169);stroke-width:2" />
+</svg>
+<p id="quote"></p>
 
 </body>
+
 </html>

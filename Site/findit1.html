@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Spirax' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  
-  <title>Find It</title>
-  
-  <style>
 
-    body {
-      background-image: url("clocktower_background.jpg");
-      background-repeat: no-repeat;
-    }
-     
-    h1 {
-      position: absolute;
-      left: 240px;
-      text-align: left;
-      color: black;
-      font-size: 48px;
-      font-family: 'Spirax';
-    }
-    
-    p1 {
-      position: absolute;
-      left: 240px;
-      top: 175px;
-      margin-right: 2em;
-	    text-align: left;
-      color: black;
-	    font-size: 32px;
-	    font-family: 'Roboto';
-    }
+<link href='https://fonts.googleapis.com/css?family=Spirax' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
-    </style>
+<title>Find It</title>
+
+<style>
+body {
+  background-image: url("clocktower_background.jpg");
+  background-repeat: no-repeat;
+}
+
+h1 {
+  position: absolute;
+  left: 240px;
+  text-align: left;
+  color: black;
+  font-size: 48px;
+  font-family: 'Spirax';
+}
+
+p1 {
+  position: absolute;
+  left: 240px;
+  top: 175px;
+  margin-right: 2em;
+  text-align: left;
+  color: black;
+  font-size: 32px;
+  font-family: 'Roboto';
+}
+</style>
+
+<script>
+
+window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if event already handled
+  }
+
+  switch (event.code) {
+    case "KeyA":
+      // Handle "next page"
+      window.open("image1.html", "_self");
+      break;
+  }
+
+  // Consume the event so it doesn't get handled twice
+  event.preventDefault();
+}, true);
+
+//Return to home screen after 5 minutes
+setTimeout(home, 300000);
+function home() {
+  window.open("index.html", "_self");
+}
+
+</script>
 </head>
+
+
+<body>
 
 <h1>Can You Find It?</h1>
 <svg height="300" width="700">
@@ -42,28 +71,6 @@
 </svg>
 <p1>Find this mystery Inverness object:<br><br>A blue and yellow dome</p1>
 
-<script>	
-
-  window.addEventListener("keydown", function(event) {
-  if (event.defaultPrevented) {
-    return; // Do nothing if event already handled
-  }
- 
-  switch(event.code) {
-    case "KeyA":
-      // Handle "next page"
-	  window.open("image1.html","_self");
-      break;
-  }
-
-  // Consume the event so it doesn't get handled twice
-  event.preventDefault();
-}, true);
-</script>
-
-<body>
-
-
-
 </body>
+
 </html>
